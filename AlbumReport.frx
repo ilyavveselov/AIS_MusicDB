@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="07/09/2021 08:04:36" ReportInfo.Modified="07/09/2021 08:17:58" ReportInfo.CreatorVersion="2020.1.17.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="bsAlbum_View" ReferenceName="bsAlbum_View" DataType="WindowsFormsApp1.Model.Album_View, Model.MusicMixModel.designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Enabled="true">
+      <Column Name="albId" DataType="System.Guid"/>
+      <Column Name="Артист" DataType="System.String"/>
+      <Column Name="Альбом" DataType="System.String"/>
+      <Column Name="Дата_выхода" DataType="System.DateTime"/>
+      <Column Name="Тип_альбома" DataType="System.String"/>
+      <Column Name="Жанр" DataType="System.String"/>
+      <Column Name="Лейбл" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text13" Left="274.05" Top="9.45" Width="141.75" Height="18.9" Text="Список альбомов" Font="Arial, 10pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text7" Width="94.5" Height="18.9" Text="Артист" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="103.95" Width="94.5" Height="18.9" Text="Альбом" Font="Arial, 10pt"/>
+      <TextObject Name="Text9" Left="207.9" Width="94.5" Height="18.9" Text="Дата_выхода" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Left="311.85" Width="94.5" Height="18.9" Text="Тип_альбома" Font="Arial, 10pt"/>
+      <TextObject Name="Text11" Left="415.8" Width="94.5" Height="18.9" Text="Жанр" Font="Arial, 10pt"/>
+      <TextObject Name="Text12" Left="519.75" Width="94.5" Height="18.9" Text="Лейбл" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="74.15" Width="718.2" Height="37.8"/>
+    <DataBand Name="Data1" Top="115.95" Width="718.2" Height="75.6" DataSource="bsAlbum_View">
+      <TextObject Name="Text1" Width="94.5" Height="18.9" Text="[bsAlbum_View.Артист]" Font="Arial, 10pt"/>
+      <TextObject Name="Text2" Left="103.95" Width="217.35" Height="18.9" Text="[bsAlbum_View.Альбом]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="330.75" Width="94.5" Height="18.9" Text="[bsAlbum_View.Дата_выхода]" Format="Date" Format.Format="d" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="425.25" Width="94.5" Height="18.9" Text="[bsAlbum_View.Тип_альбома]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="519.75" Width="94.5" Height="18.9" Text="[bsAlbum_View.Жанр]" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="614.25" Width="94.5" Height="18.9" Text="[bsAlbum_View.Лейбл]" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="195.55" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

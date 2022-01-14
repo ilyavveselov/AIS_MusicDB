@@ -1,0 +1,104 @@
+﻿
+namespace WindowsFormsApp1.Forms
+{
+    partial class AddAlbumType
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lblAdd = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtboxAdd = new System.Windows.Forms.TextBox();
+            this.bClose = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lblAdd
+            // 
+            this.lblAdd.AutoSize = true;
+            this.lblAdd.Location = new System.Drawing.Point(8, 14);
+            this.lblAdd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdd.Name = "lblAdd";
+            this.lblAdd.Size = new System.Drawing.Size(178, 20);
+            this.lblAdd.TabIndex = 8;
+            this.lblAdd.Text = "Название типа альбома";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(13, 89);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(100, 35);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Добавить";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtboxAdd
+            // 
+            this.txtboxAdd.Location = new System.Drawing.Point(12, 52);
+            this.txtboxAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtboxAdd.Name = "txtboxAdd";
+            this.txtboxAdd.Size = new System.Drawing.Size(220, 27);
+            this.txtboxAdd.TabIndex = 6;
+            // 
+            // bClose
+            // 
+            this.bClose.Location = new System.Drawing.Point(132, 89);
+            this.bClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bClose.Name = "bClose";
+            this.bClose.Size = new System.Drawing.Size(100, 35);
+            this.bClose.TabIndex = 9;
+            this.bClose.Text = "Закрыть";
+            this.bClose.UseVisualStyleBackColor = true;
+            this.bClose.Click += new System.EventHandler(this.bClose_Click);
+            // 
+            // AddAlbumType
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(237, 146);
+            this.Controls.Add(this.bClose);
+            this.Controls.Add(this.lblAdd);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtboxAdd);
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "AddAlbumType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Добавить тип";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblAdd;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtboxAdd;
+        private System.Windows.Forms.Button bClose;
+    }
+}

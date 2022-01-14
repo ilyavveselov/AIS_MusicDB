@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Veselov_AIS" Class="MusicMixModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=Veselov_AIS;Integrated Security=True" SettingsObjectName="WindowsFormsApp1.Properties.Settings" SettingsPropertyName="Veselov_AISConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Album" Member="Album">
+    <Type Name="Album">
+      <Column Name="albId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="albArtistId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="albName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="albReleaseDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="albTypeId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="albLabelId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="albGenreId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Album_Song" Member="Song" ThisKey="albId" OtherKey="songAlbumId" Type="Song" />
+      <Association Name="Album_MusicMix" Member="MusicMix" ThisKey="albId" OtherKey="musicMixAlbumId" Type="MusicMix" />
+      <Association Name="AlbumType_Album" Member="AlbumType" ThisKey="albTypeId" OtherKey="albTypeId" Type="AlbumType" IsForeignKey="true" />
+      <Association Name="Artist_Album" Member="Artist" ThisKey="albArtistId" OtherKey="artId" Type="Artist" IsForeignKey="true" />
+      <Association Name="Genre_Album" Member="Genre" ThisKey="albGenreId" OtherKey="genreId" Type="Genre" IsForeignKey="true" />
+      <Association Name="LabelName_Album" Member="LabelName" ThisKey="albLabelId" OtherKey="labelId" Type="LabelName" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AlbumType" Member="AlbumType">
+    <Type Name="AlbumType">
+      <Column Name="albTypeId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="albTypeName" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="AlbumType_Album" Member="Album" ThisKey="albTypeId" OtherKey="albTypeId" Type="Album" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Artist" Member="Artist">
+    <Type Name="Artist">
+      <Column Name="artId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="artName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="artCountryId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="artPhotoUrl" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Artist_Album" Member="Album" ThisKey="artId" OtherKey="albArtistId" Type="Album" />
+      <Association Name="Artist_Song" Member="Song" ThisKey="artId" OtherKey="songArtistId" Type="Song" />
+      <Association Name="Artist_MusicMix" Member="MusicMix" ThisKey="artId" OtherKey="musicMixArtistId" Type="MusicMix" />
+      <Association Name="Country_Artist" Member="Country" ThisKey="artCountryId" OtherKey="countryId" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Country">
+    <Type Name="Country">
+      <Column Name="countryId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="countryName" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Association Name="Country_Artist" Member="Artist" ThisKey="countryId" OtherKey="artCountryId" Type="Artist" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Genre" Member="Genre">
+    <Type Name="Genre">
+      <Column Name="genreId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="genreName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Genre_Album" Member="Album" ThisKey="genreId" OtherKey="albGenreId" Type="Album" />
+      <Association Name="Genre_MusicMix" Member="MusicMix" ThisKey="genreId" OtherKey="musicMixGenreId" Type="MusicMix" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LabelName" Member="LabelName">
+    <Type Name="LabelName">
+      <Column Name="labelId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="labelName" Member="labelName1" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="LabelName_Album" Member="Album" ThisKey="labelId" OtherKey="albLabelId" Type="Album" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Song" Member="Song">
+    <Type Name="Song">
+      <Column Name="songId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="songArtistId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="songAlbumId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="songName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Song_MusicMix" Member="MusicMix" ThisKey="songId" OtherKey="musicMixSongId" Type="MusicMix" />
+      <Association Name="Album_Song" Member="Album" ThisKey="songAlbumId" OtherKey="albId" Type="Album" IsForeignKey="true" />
+      <Association Name="Artist_Song" Member="Artist" ThisKey="songArtistId" OtherKey="artId" Type="Artist" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MusicMix" Member="MusicMix">
+    <Type Name="MusicMix">
+      <Column Name="musicMixSongPositionId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="musicMixSongId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="musicMixGenreId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="musicMixUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="musicMixAlbumId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="musicMixArtistId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Album_MusicMix" Member="Album" ThisKey="musicMixAlbumId" OtherKey="albId" Type="Album" IsForeignKey="true" />
+      <Association Name="Artist_MusicMix" Member="Artist" ThisKey="musicMixArtistId" OtherKey="artId" Type="Artist" IsForeignKey="true" />
+      <Association Name="Genre_MusicMix" Member="Genre" ThisKey="musicMixGenreId" OtherKey="genreId" Type="Genre" IsForeignKey="true" />
+      <Association Name="Song_MusicMix" Member="Song" ThisKey="musicMixSongId" OtherKey="songId" Type="Song" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="User">
+    <Type Name="User">
+      <Column Name="usrId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="usrName" Type="System.String" DbType="VarChar(24) NOT NULL" CanBeNull="false" />
+      <Column Name="usrPswd" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="usrOnline" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OldMusicMix" Member="OldMusicMix">
+    <Type Name="OldMusicMix">
+      <Column Name="oldMixId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="oldMixSongId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="oldMixSongPositionId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="oldMixUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="oldMixIdOfList" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Album_View" Member="Album_View">
+    <Type Name="Album_View">
+      <Column Name="albId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Артист" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Альбом" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="[Дата выхода]" Member="Дата_выхода" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Тип альбома]" Member="Тип_альбома" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Жанр" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Лейбл" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Song_View" Member="Song_View">
+    <Type Name="Song_View">
+      <Column Name="sngId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="[Название альбома]" Member="Название_альбома" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Исполнитель" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="[Название песни]" Member="Название_песни" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AlbumType_View" Member="AlbumType_View">
+    <Type Name="AlbumType_View">
+      <Column Name="aTypeId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="[Тип альбома]" Member="Тип_альбома" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country_View" Member="Country_View">
+    <Type Name="Country_View">
+      <Column Name="cId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Страна" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Genre_View" Member="Genre_View">
+    <Type Name="Genre_View">
+      <Column Name="gId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="[Название жанра]" Member="Название_жанра" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LabelName_View" Member="LabelName_View">
+    <Type Name="LabelName_View">
+      <Column Name="lId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="[Название лейбла]" Member="Название_лейбла" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.List_View" Member="List_View">
+    <Type Name="List_View">
+      <Column Name="oMId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="[Номер списка]" Member="Номер_списка" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Имя Пользователя]" Member="Имя_Пользователя" Type="System.String" DbType="VarChar(24) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MusicMix_View" Member="MusicMix_View">
+    <Type Name="MusicMix_View">
+      <Column Name="mMId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Песня" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Исполнитель" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Альбом" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Жанр" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Artist_View" Member="Artist_View">
+    <Type Name="Artist_View">
+      <Column Name="artId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Исполнитель" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Страна" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

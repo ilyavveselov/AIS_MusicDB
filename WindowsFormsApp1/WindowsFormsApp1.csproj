@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{983EC245-1EE2-4D86-AF83-8CCE7E1480C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastReport, Version=2020.1.17.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c" />
+    <Reference Include="FastReport.Bars, Version=2020.1.17.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c" />
+    <Reference Include="FastReport.Editor, Version=2020.1.17.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AddAlbumType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddAlbumType.Designer.cs">
+      <DependentUpon>AddAlbumType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddArtist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddArtist.Designer.cs">
+      <DependentUpon>AddArtist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCountry.Designer.cs">
+      <DependentUpon>AddCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddGenre.Designer.cs">
+      <DependentUpon>AddGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddLabelName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddLabelName.Designer.cs">
+      <DependentUpon>AddLabelName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddSong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddSong.Designer.cs">
+      <DependentUpon>AddSong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AlbumAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AlbumAdd.Designer.cs">
+      <DependentUpon>AlbumAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeAlbum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeAlbum.Designer.cs">
+      <DependentUpon>ChangeAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeAlbumType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeAlbumType.Designer.cs">
+      <DependentUpon>ChangeAlbumType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeArtist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeArtist.Designer.cs">
+      <DependentUpon>ChangeArtist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeCountry.Designer.cs">
+      <DependentUpon>ChangeCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeGenre.Designer.cs">
+      <DependentUpon>ChangeGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeLabelName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeLabelName.Designer.cs">
+      <DependentUpon>ChangeLabelName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeSong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeSong.Designer.cs">
+      <DependentUpon>ChangeSong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginScreen.Designer.cs">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OldMixForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OldMixForm.Designer.cs">
+      <DependentUpon>OldMixForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OpenOldMix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OpenOldMix.Designer.cs">
+      <DependentUpon>OpenOldMix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MusicMixModel.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusicMixModel.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ucAlbum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucAlbum.Designer.cs">
+      <DependentUpon>ucAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucAlbumType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucAlbumType.Designer.cs">
+      <DependentUpon>ucAlbumType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucArtist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucArtist.Designer.cs">
+      <DependentUpon>ucArtist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucCountry.Designer.cs">
+      <DependentUpon>ucCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucGenre.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucGenre.Designer.cs">
+      <DependentUpon>ucGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucLabelName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucLabelName.Designer.cs">
+      <DependentUpon>ucLabelName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucMainScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucMainScreen.Designer.cs">
+      <DependentUpon>ucMainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucMusicMix.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucMusicMix.Designer.cs">
+      <DependentUpon>ucMusicMix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucOldMix.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucOldMix.Designer.cs">
+      <DependentUpon>ucOldMix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucReport.Designer.cs">
+      <DependentUpon>ucReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSong.Designer.cs">
+      <DependentUpon>ucSong.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\AddAlbumType.resx">
+      <DependentUpon>AddAlbumType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddArtist.resx">
+      <DependentUpon>AddArtist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCountry.resx">
+      <DependentUpon>AddCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddGenre.resx">
+      <DependentUpon>AddGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddLabelName.resx">
+      <DependentUpon>AddLabelName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddSong.resx">
+      <DependentUpon>AddSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AlbumAdd.resx">
+      <DependentUpon>AlbumAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeAlbum.resx">
+      <DependentUpon>ChangeAlbum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeAlbumType.resx">
+      <DependentUpon>ChangeAlbumType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeArtist.resx">
+      <DependentUpon>ChangeArtist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeCountry.resx">
+      <DependentUpon>ChangeCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeGenre.resx">
+      <DependentUpon>ChangeGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeLabelName.resx">
+      <DependentUpon>ChangeLabelName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeSong.resx">
+      <DependentUpon>ChangeSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OldMixForm.resx">
+      <DependentUpon>OldMixForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OpenOldMix.resx">
+      <DependentUpon>OpenOldMix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\ucAlbum.resx">
+      <DependentUpon>ucAlbum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucAlbumType.resx">
+      <DependentUpon>ucAlbumType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucArtist.resx">
+      <DependentUpon>ucArtist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucCountry.resx">
+      <DependentUpon>ucCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucGenre.resx">
+      <DependentUpon>ucGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucLabelName.resx">
+      <DependentUpon>ucLabelName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucMainScreen.resx">
+      <DependentUpon>ucMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucMusicMix.resx">
+      <DependentUpon>ucMusicMix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucOldMix.resx">
+      <DependentUpon>ucOldMix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucReport.resx">
+      <DependentUpon>ucReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSong.resx">
+      <DependentUpon>ucSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Model\MusicMixModel.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MusicMixModel.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Model\MusicMixModel.dbml.layout">
+      <DependentUpon>MusicMixModel.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.AlbumType_View.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.Album_View.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.Artist_View.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.Country_View.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.Genre_View.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.LabelName_View.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.List_View.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.MusicMix_View.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.Song_View.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="AlbumReport.frx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
